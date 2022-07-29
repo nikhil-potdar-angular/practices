@@ -1,0 +1,35 @@
+<div class="container">
+  <h2 class="mt-4">Angular Dynamic Checkboxes List Example</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label>
+          Phone
+          <input
+            type="text"
+            class="form-control"
+            formControlName="phone"
+            [class.is-invalid]="f['phone'].touched && f['phone'].invalid"
+           >
+        </label>
+        <div class="text-danger" *ngIf="f['phone'].touched && f['phone'].invalid">
+            atlist 10 digit
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="row">
+        Languesges
+      </div>
+      <div class="row">
+        <label formArrayName="orders" *ngFor="let order of ordersFormArray.controls; let i = index">
+          <input type="checkbox" [formControlName]="i">
+          {{webData[i].name}}
+        </label>
+      </div>
+    </div>
+    <br/>
+    <button class="btn btn-success">submit</button>
+  </form>
+</div>

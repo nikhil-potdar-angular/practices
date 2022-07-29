@@ -1,0 +1,10 @@
+<div class="ms-5">
+  <input type="checkbox" [(ngModel)]="isMasterSel" (change)="checkUncheckAll()"><label for="">Select All</label>
+  <ul class="ms-3">
+    <li *ngFor="let item of categoryList"><input id={{item.value}} type="checkbox" (change)="isAllSelected()"
+        [(ngModel)]="item.isSelected"><label for={{item.value}}>{{item.value}}</label></li>
+  </ul>
+</div>
+<hr>
+
+

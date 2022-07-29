@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col">
+      <label for="exampleFormControlSelect1">Search </label>
+      <input type="search">
+    </div>
+    <div class="col">
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-2">
+              <label for="exampleFormControlSelect1">select</label>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control w-50" (change)="itemPerPage($event)" id="exampleFormControlSelect1">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div *ngFor="let item of todos;trackBy:trackByFun" class="col-md-4">
+      <div class="card" >
+        <h2>{{ item.title }}</h2>
+        <!-- <div class="card-body">
+          <h4>{{ item.body }}</h4>
+        </div> -->
+      </div>
+    </div>
+  </div>
+ <app-child-pagination (newItemEvent)="getPage($event)" ></app-child-pagination>
+</div>

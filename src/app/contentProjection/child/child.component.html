@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <ng-content select=".header"></ng-content>
+  <ol class="list-group list-group-numbered">
+    <li *ngFor="let item of products" class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">{{item.name}}</div>
+      </div>
+      <span class="badge bg-primary rounded-pill">{{item.price}}</span>
+    </li>
+  </ol>
+  <ng-content select=".link"></ng-content>
+  <button class="btn">add</button>
+</div>
